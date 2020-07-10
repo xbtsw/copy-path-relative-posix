@@ -1,5 +1,5 @@
 {
-	"name": "copy-relative-path-posix",
+	"name": "copy-import-path",
 	"displayName": "Copy Relative Path Posix",
 	"description": "This extensions adds a command to copy the workspace relative path of a file using posix path separator (\"/\").",
 	"publisher": "rssowl",
@@ -12,26 +12,39 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:copyRelativePathPosix"
+		"onCommand:copyImportPath",
+		"onCommand:copyExportPath"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "copyRelativePathPosix",
-				"title": "Copy Relative Path (Posix)"
+				"command": "copyImportPath",
+				"title": "Copy Import Path"
+			},
+			{
+				"command": "copyExportPath",
+				"title": "Copy Export Path"
 			}
 		],
 		"menus": {
 			"explorer/context": [
 				{
-					"command": "copyRelativePathPosix",
+					"command": "copyImportPath",
+					"group": "6_copypath"
+				},
+				{
+					"command": "copyExportPath",
 					"group": "6_copypath"
 				}
 			],
 			"editor/title/context": [
 				{
-					"command": "copyRelativePathPosix",
+					"command": "copyImportPath",
+					"group": "1_cutcopypaste"
+				},
+				{
+					"command": "copyExportPath",
 					"group": "1_cutcopypaste"
 				}
 			]
